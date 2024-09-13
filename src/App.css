@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:white;
+}
+
+.App {
+  text-align: center;
+  background: aquamarine;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 400px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+.welcome-screen, .thank-you-screen, .question-screen {
+  margin: 20px;
+  background-color: aquamarine;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+input[type="number"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.navigation-buttons {
+  display: flex; /* Use flexbox to align items horizontally */
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+
+.navigation-buttons .pre-btn, 
+.navigation-buttons .next-btn,
+.navigation-buttons .submit {
+  flex: 1; 
+  margin: 0 5px; 
+}
+
+.navigation-buttons .pre-btn {
+  background-color: #007bff;
+  margin-right: 50px;
+}
+
+.navigation-buttons .next-btn {
+  background-color: rgb(235, 62, 119);
+}
+
+.navigation-buttons .submit {
+  background-color: rgb(17, 136, 23);
+}
+
+.radio-group {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.radio-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.radio-button input[type="radio"] {
+  opacity: 0; /* Hide the default radio button */
+  position: absolute;
+}
+
+.radio-button input[type="radio"]:checked + .radio-number {
+  background-color:red;
+  border: red;
+  color: white;
+}
+
+.radio-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+ 
+}
+
+.radio-number:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.question-number {
+  margin-left: 250px;
+  margin-bottom: 20px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Small devices (phones, 320px - 480px) */
+@media (max-width: 480px) {
+  .App {
+    width: 90%; /* Adjust to fit small screens */
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .radio-number {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .question-number {
+    margin-left: 100px;
+    font-size: 14px;
+  }
+}
+
+/* Medium devices (tablets, 481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .App {
+    width: 80%;
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+
+  .radio-number {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    line-height: 33px;
+  }
+
+  .question-number {
+    margin-left: 150px;
+    font-size: 16px;
+  }
+}
+
+/* Large devices (desktops, 769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .App {
+    width: 70%;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .radio-number {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 36px;
+  }
+
+  .question-number {
+    margin-left: 200px;
+    font-size: 18px;
+  }
+}
+
+/* Extra-large devices (1025px and above) */
+@media (min-width: 1025px) {
+  .App {
+    width: 400px; /* Fixed width for larger devices */
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+  .radio-number {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    line-height: 42px;
+  }
+
+  .question-number {
+    margin-left: 250px;
+    font-size: 20px;
+  }
+}
